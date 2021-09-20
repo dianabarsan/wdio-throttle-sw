@@ -20,7 +20,6 @@ describe('Throttle for service worker requests', () => {
 
   const installServiceWorker = () => browser.executeAsync(done => {
     const now = new Date().getTime();
-    //document.write('installing service worker');
     navigator.serviceWorker
       .register('/service-worker.js')
       .then(registration => {
@@ -88,7 +87,7 @@ describe('Throttle for service worker requests', () => {
     expect(downloadingFileDuration).toBeGreaterThan(0);
 
     const ratio = Math.round((downloadingFileDuration - installWorkerDuration) / installWorkerDuration * 100);
-    expect(ratio).toBeLessThan(100); // when ratio is 100, installWorkerDuration = 2 x downloadingFileDuration
+    expect(ratio).toBeLessThan(100); // when ratio is 100, installWorkerDuration = downloadingFileDuration / 2
   });
 
   it('should not install service worker when browser is offline', async () => {
