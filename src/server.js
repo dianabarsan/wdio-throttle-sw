@@ -22,7 +22,7 @@ const createOneMBTextFile = async () => {
   return fs.promises.writeFile(filePath, string);
 };
 
-const createSWFile = async () => {
+const createSWFile = () => {
   const config = {
     cacheId: 'cache',
     claimsClient: true,
