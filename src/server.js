@@ -6,10 +6,10 @@ const swPrecache = require('sw-precache');
 const fileName = 'file.txt';
 const staticPath = path.join(__dirname, 'public');
 const filePath = path.join(staticPath, fileName);
-const port = 8265;
+const port = process.env.PORT || 8265;
 
 const createOneMBTextFile = async () => {
-  const size = 1000000;
+  const size = 10 * 100 * 1000;
   const exists = await fs.promises.access(filePath).catch(() => false);
   if (exists) {
     const stats = await fs.promises.stat(filePath);

@@ -1,4 +1,5 @@
-const http = require('http')
+const http = require('http');
+const port = process.env.PORT || 8265;
 
 exports.config = {
   runner: 'local',
@@ -7,13 +8,13 @@ exports.config = {
   capabilities: [{
     browserName: 'chrome',
   }],
-  baseUrl: 'http://localhost:8265',
+  baseUrl: `http://localhost:${port}`,
   logLevel: 'info',
   outputDir: __dirname,
   waitForTimeout: 1000000,
   connectionRetryTimeout: 120000,
   framework: 'mocha',
-  reporters: [ 'dot' ],
+  reporters: ['spec'],
   mochaOpts: {
     ui: 'bdd',
     timeout: 70000,
