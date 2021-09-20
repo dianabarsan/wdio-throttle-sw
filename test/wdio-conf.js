@@ -20,7 +20,6 @@ exports.config = {
     timeout: 70000,
   },
   onComplete: (exitcode, config) => {
-    console.log('calling on Complete');
     http.get(`${config.baseUrl}/stop`);
   },
 }
