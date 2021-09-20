@@ -19,7 +19,7 @@ The test will:
 - fetch the file within the browser 
 - reset the session and throttles the browser to the same options as before (downloadThroughput = 2 * 100 * 1000)
 - fetch the file within the browser
-- calculat the ratio between how long it took to install the service worker compared to downloading the file directly. Expects this ratio to be lower than 100 (when installing the service is twice as fast as downloading the file).
+- calculate the ratio between how long it took to install the service worker compared to downloading the file directly. Expects this ratio to be lower than 100 (when installing the service is twice as fast as downloading the file).
 
 
 
